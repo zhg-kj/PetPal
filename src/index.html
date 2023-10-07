@@ -28,7 +28,111 @@
         </div>
       </div>
     </nav>
-    <h1>HOME</h1>
+    <div class="container mt-5">
+      <h1>Search for Pets</h1>
+
+      <!-- Search Bar -->
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" id="searchBar" placeholder="Search for pets...">
+        <button class="btn btn-primary" onclick="searchPets()">Search</button>
+      </div>
+
+      <!-- Sorting Dropdown -->
+      <div class="mb-3">
+        <label for="sortDropdown" class="form-label">Sort by:</label>
+        <select class="form-select" id="sortDropdown">
+          <option value="name">Name</option>
+          <option value="age">Age</option>
+          <option value="size">Size</option>
+        </select>
+      </div>
+
+      <!-- Search Results -->
+      <div id="searchResults">
+        <!-- Display search results here -->
+      </div>
+    </div>
+
+    <script>
+      const fakeData = [
+        { name: "Fluffy", type: "Dog", age: 3, size: "Medium" },
+        { name: "Max", type: "Dog", age: 2, size: "Large" },
+        { name: "Buddy", type: "Dog", age: 1, size: "Small" },
+        { name: "Charlie", type: "Dog", age: 4, size: "Medium" },
+        { name: "Lucy", type: "Dog", age: 2, size: "Small" },
+        { name: "Bailey", type: "Dog", age: 5, size: "Large" },
+        { name: "Daisy", type: "Dog", age: 3, size: "Medium" },
+        { name: "Luna", type: "Dog", age: 1, size: "Small" },
+        { name: "Cooper", type: "Dog", age: 2, size: "Large" },
+        { name: "Sadie", type: "Dog", age: 4, size: "Medium" },
+        { name: "Whiskers", type: "Cat", age: 2, size: "Small" },
+        { name: "Mittens", type: "Cat", age: 3, size: "Small" },
+        { name: "Tiger", type: "Cat", age: 5, size: "Medium" },
+        { name: "Lily", type: "Cat", age: 1, size: "Small" },
+        { name: "Simba", type: "Cat", age: 4, size: "Medium" },
+      ];
+
+      // Function to perform sorting based on selected criteria
+      function sortResults(data) {
+        const sortBy = document.getElementById("sortDropdown").value;
+        if (sortBy === "name") {
+          data.sort((a, b) => a.name.localeCompare(b.name));
+        } else if (sortBy === "age") {
+          data.sort((a, b) => a.age - b.age);
+        } else if (sortBy === "size") {
+          data.sort((a, b) => a.size.localeCompare(b.size));
+        }
+        
+        displaySearchResults(data);
+      }
+
+      // Function to display search results
+      function displaySearchResults(results) {
+        const searchResultsDiv = document.getElementById("searchResults");
+        searchResultsDiv.innerHTML = ""; // Clear previous results
+
+        if (results.length === 0) {
+          searchResultsDiv.innerHTML = "<p>No pets found matching your search term.</p>";
+        } else {
+          results.forEach((pet) => {
+            // Create a card for each pet
+            const card = document.createElement("div");
+            card.classList.add("card", "mb-3");
+
+            // Fill in card content with pet information
+            card.innerHTML = `
+              <div class="card-body">
+                <h5 class="card-title">${pet.name}</h5>
+                <p class="card-text">Age: ${pet.age} years</p>
+                <p class="card-text">Size: ${pet.size}</p>
+              </div>
+            `;
+
+            // Append the card to the search results container
+            searchResultsDiv.appendChild(card);
+          });
+        }
+      }
+
+      // Function to perform the search
+      function searchPets() {
+          const searchTerm = document.getElementById("searchBar").value.trim();
+          
+          if (searchTerm === "large") {
+            sortResults(fakeData.filter((pet) => pet.size.toLowerCase() === "large"));
+          } else if (searchTerm === "medium") {
+            sortResults(fakeData.filter((pet) => pet.size.toLowerCase() === "medium"));
+          } else if (searchTerm === "small") {
+            sortResults(fakeData.filter((pet) => pet.size.toLowerCase() === "small"));
+          } else {
+            sortResults(fakeData);
+          }
+      }
+
+      document.getElementById("sortDropdown").addEventListener("change", searchPets);
+      // Initial sorting when the page loads
+      sortResults(fakeData);
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
