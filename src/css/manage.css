@@ -1,3 +1,5 @@
+
+
 .badge-warning{
     background-color: orange;
     color: black;
@@ -10,4 +12,8 @@
 
 .badge-danger{
     background-color: red;
+}
+
+td{
+    vertical-align: middle;
 }
