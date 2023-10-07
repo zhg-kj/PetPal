@@ -30,13 +30,54 @@
     </nav>
     <div class="container mt-5">
       <h1>Applications</h1>
-      <button class="btn btn-secondary mt-3" onclick="viewApplication()">View Application</button>
+      <div class="table-responsive mt-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Pet Name</th>
+              <th>Application Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="applicationTableBody">
+            <!-- Applications go here -->
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <script>
       function viewApplication() {
         window.location.href = "application.html";
       }
+    </script>
+    <script>
+      const fakeData = [
+        {pet: { name: "Fluffy", type: "Dog", age: 3, size: "Medium" }, date: "10/07/2023", status: "Pending"},
+        {pet: { name: "Max", type: "Dog", age: 2, size: "Large" }, date: "10/07/2023", status: "Approved"},
+        {pet: { name: "Buddy", type: "Dog", age: 1, size: "Small" }, date: "10/07/2023", status: "Rejected"},
+        {pet: { name: "Tiger", type: "Cat", age: 5, size: "Medium" }, date: "10/07/2023", status: "Pending"}
+      ]
+
+      function generateApplicationRows() {
+        const tableBody = document.getElementById("applicationTableBody");
+
+        fakeData.forEach((application, index) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${application.pet.name}</td>
+            <td>${application.date}</td>
+            <td>${application.status}</td>
+            <td>
+              <button class="btn btn-secondary" onclick="viewApplication()">View Application</button>
+            </td>
+          `;
+          tableBody.appendChild(row);
+        });
+      }
+
+      generateApplicationRows();
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
