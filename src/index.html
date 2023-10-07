@@ -54,6 +54,11 @@
     </div>
 
     <script>
+      function viewDetails() {
+        window.location.href = "details.html";
+      }
+    </script>
+    <script>
       const fakeData = [
         { name: "Fluffy", type: "Dog", age: 3, size: "Medium" },
         { name: "Max", type: "Dog", age: 2, size: "Large" },
@@ -105,6 +110,7 @@
                 <h5 class="card-title">${pet.name}</h5>
                 <p class="card-text">Age: ${pet.age} years</p>
                 <p class="card-text">Size: ${pet.size}</p>
+                <button class="btn btn-secondary mt-3" onclick="viewDetails()">View Details</button>
               </div>
             `;
 
@@ -143,12 +149,12 @@
         const auth = checkAuth();
         if (auth != null) {
           if (auth === 'user') {
-            authButtonsDiv.innerHTML = '<a class="dropdown-item" href="user.html">Profile</button><a class="dropdown-item" onclick="handleLogout()">Logout</button>';
+            authButtonsDiv.innerHTML = '<a class="dropdown-item" href="applications.html">Applications</a><a class="dropdown-item" href="user.html">Profile</a><a class="dropdown-item" onclick="handleLogout()">Logout</a>';
           } else if (auth === 'shelter') {
-            authButtonsDiv.innerHTML = '<a class="dropdown-item" href="shelter.html">Profile</button><a class="dropdown-item" onclick="handleLogout()">Logout</button>';
+            authButtonsDiv.innerHTML = '<a class="dropdown-item" href="manage.html">Manage Pets</a><a class="dropdown-item" href="shelter.html">Profile</a><a class="dropdown-item" onclick="handleLogout()">Logout</a>';
           }
         } else {
-          authButtonsDiv.innerHTML = '<a class="dropdown-item" href="login.html">Login</button>';
+          authButtonsDiv.innerHTML = '<a class="dropdown-item" href="login.html">Login</a>';
         }
       }
 
