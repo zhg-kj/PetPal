@@ -31,13 +31,11 @@
     <div class="container mt-5">
       <h1>Search for Pets</h1>
 
-      <!-- Search Bar -->
       <div class="input-group mb-3">
         <input type="text" class="form-control" id="searchBar" placeholder="Search for pets...">
         <button class="btn btn-primary" onclick="searchPets()">Search</button>
       </div>
 
-      <!-- Sorting Dropdown -->
       <div class="mb-3">
         <label for="sortDropdown" class="form-label">Sort by:</label>
         <select class="form-select" id="sortDropdown">
@@ -47,7 +45,6 @@
         </select>
       </div>
 
-      <!-- Search Results -->
       <div id="searchResults">
         <!-- Display search results here -->
       </div>
@@ -77,7 +74,6 @@
         { name: "Simba", type: "Cat", age: 4, size: "Medium" },
       ];
 
-      // Function to perform sorting based on selected criteria
       function sortResults(data) {
         const sortBy = document.getElementById("sortDropdown").value;
         if (sortBy === "name") {
@@ -91,20 +87,17 @@
         displaySearchResults(data);
       }
 
-      // Function to display search results
       function displaySearchResults(results) {
         const searchResultsDiv = document.getElementById("searchResults");
-        searchResultsDiv.innerHTML = ""; // Clear previous results
+        searchResultsDiv.innerHTML = "";
 
         if (results.length === 0) {
           searchResultsDiv.innerHTML = "<p>No pets found matching your search term.</p>";
         } else {
           results.forEach((pet) => {
-            // Create a card for each pet
             const card = document.createElement("div");
             card.classList.add("card", "mb-3");
 
-            // Fill in card content with pet information
             card.innerHTML = `
               <div class="card-body">
                 <h5 class="card-title">${pet.name}</h5>
@@ -114,13 +107,11 @@
               </div>
             `;
 
-            // Append the card to the search results container
             searchResultsDiv.appendChild(card);
           });
         }
       }
 
-      // Function to perform the search
       function searchPets() {
           const searchTerm = document.getElementById("searchBar").value.trim();
           
@@ -136,6 +127,7 @@
       }
 
       document.getElementById("sortDropdown").addEventListener("change", searchPets);
+
       // Initial sorting when the page loads
       sortResults(fakeData);
     </script>
