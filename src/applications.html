@@ -4,7 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PetPal</title>
+    <link rel="stylesheet" type="text/css" href="css/applications.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -28,12 +31,15 @@
         </div>
       </div>
     </nav>
+    
     <div class="container mt-5">
       <h1>Applications</h1>
+      <h7>View your applications <br></h7>
       <div class="table-responsive mt-3">
-        <table class="table table-bordered">
-          <thead>
+        <table class="table table-rounded table-striped">
+          <thead class="thead-dark">
             <tr>
+     
               <th>Pet Name</th>
               <th>Application Date</th>
               <th>Status</th>
@@ -65,10 +71,33 @@
 
         fakeData.forEach((application, index) => {
           const row = document.createElement("tr");
+          let statusClass = '';
+          switch (application.status.toLowerCase()) {
+            case 'approved':
+              statusClass = 'badge badge-success';
+              break;
+            case 'pending':
+              statusClass = 'badge badge-warning';
+              break;
+            case 'rejected':
+              statusClass = 'badge badge-danger';
+              break;
+          default:
+              break;
+          }
+          
           row.innerHTML = `
-            <td>${application.pet.name}</td>
+            <td>
+              <div class="profilepic">
+                <img src="https://d3544la1u8djza.cloudfront.net/APHI/Blog/2021/07-06/small+white+fluffy+dog+smiling+at+the+camera+in+close-up-min.jpg" alt="${application.pet.name}" 
+              width="40" height="40" style="border-radius:90%;">
+              &nbsp
+              ${application.pet.name}
+              </div>
+            </td>
             <td>${application.date}</td>
-            <td>${application.status}</td>
+            <td><div class="${statusClass}" >${application.status}</div></td>
+
             <td>
               <button class="btn btn-secondary" onclick="viewApplication()">View Application</button>
             </td>
