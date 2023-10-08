@@ -1,0 +1,103 @@
+/* 
+ * css file for adoption page 
+ */
+
+.sign_up_headline {
+    color: #ADA7FF;
+    font-family: Titan One;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 1rem 1rem 0 1rem;
+}
+
+.sign_up {
+    position: absolute;
+    color: rgba(6, 6, 6, 0.64);
+    font-family: Saira Condensed;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 4rem 0 0 5rem;
+}
+
+.sign_up_intro {
+    color: #909090;
+    font-family: Saira Condensed;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    width: 20%;
+    height: auto;
+    position: absolute;
+    margin: 7rem 0 0 5rem;
+}
+
+svg {
+    padding: 0.5rem 1rem 1rem 0.5rem;
+}
+
+.headline {
+    width: 50%;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #272727;
+    justify-content: center;
+    text-align: center;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    color: #FFF;
+    font-family: Nunito;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+}
+
+.pic1 {
+    width: 50vh;
+    height: 32vh;
+    position: absolute;
+    left: 15rem;
+    right: 0;
+    top: 30rem;
+    /* padding-top: 10rem;
+    padding-left: 5rem; */
+}
+
+.form-label {
+    font-family: Nunito;
+    font-weight: 700;
+}
+
+.form-control {
+    padding: 0.8rem;
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border: black;
+}
+
+.btn-primary {
+    color: #ADA7FF;
+    font-family: Titan One;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+    background-color: white;
+    border: white;
+}
+
+.btn-primary:hover{
+    color: black;
+    background-color: white;
+    border: white;
+}
