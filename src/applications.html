@@ -52,22 +52,24 @@
     
     <div class="container mt-5">
       <h1>Applications</h1>
-      <h7>View your applications <br></h7>
-      <div class="table-responsive mt-3">
-        <table class="table table-rounded table-striped">
-          <thead class="thead-dark">
-            <tr>
-     
-              <th>Pet Name</th>
-              <th>Application Date</th>
-              <th>Status</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody id="applicationTableBody">
-            <!-- Applications go here -->
-          </tbody>
-        </table>
+      <p>View your applications.</p>
+      <div class="card p-4 mt-3 rounded-4">
+        <div class="table-responsive">
+          <table class="table table-rounded">
+            <thead class="thead-dark">
+              <tr>
+                <th class="d-none d-lg-table-cell"></th>
+                <th>Name</th>
+                <th class="d-none d-lg-table-cell">Date</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="applicationTableBody">
+              <!-- Applications go here -->
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
@@ -78,10 +80,10 @@
     </script>
     <script>
       const fakeData = [
-        {pet: { name: "Fluffy", type: "Dog", age: 3, size: "Medium" }, date: "10/07/2023", status: "Pending"},
-        {pet: { name: "Max", type: "Dog", age: 2, size: "Large" }, date: "10/07/2023", status: "Approved"},
-        {pet: { name: "Buddy", type: "Dog", age: 1, size: "Small" }, date: "10/07/2023", status: "Rejected"},
-        {pet: { name: "Tiger", type: "Cat", age: 5, size: "Medium" }, date: "10/07/2023", status: "Pending"}
+        {pet: { name: "Fluffy", type: "Dog", age: 3, size: "Medium", image: "https://cdn.discordapp.com/attachments/861479282915803137/1160390475488960662/IMG_8724.jpg?ex=65347cd8&is=652207d8&hm=c1e21b24fcf89c258d919a21f8c5829196bea02c643ff44e4b9d12c4c2e1cf62&" }, date: "10/07/2023", status: "Pending"},
+        {pet: { name: "Simba", type: "Cat", age: 4, size: "Medium", image: "https://cdn.discordapp.com/attachments/861479282915803137/1160390477858734221/3f0d721ce3b7de169a9781c35487d4fe.jpg?ex=65347cd8&is=652207d8&hm=f0963275f0f004d271b713571c2e21e8e57b8a64f10557df77ff3f5212b0d0cb&" }, date: "10/07/2023", status: "Approved"},
+        {pet: { name: "Buddy", type: "Dog", age: 1, size: "Small", image: "https://cdn.discordapp.com/attachments/861479282915803137/1160390476441059421/IMG_8721.jpg?ex=65347cd8&is=652207d8&hm=9e0100c23261f61c7c79c0c5b24b6d069a373f425944c70f2ffd244443951909&" }, date: "10/07/2023", status: "Rejected"},
+        {pet: { name: "Tiger", type: "Cat", age: 5, size: "Medium", image: "https://cdn.discordapp.com/attachments/861479282915803137/1160390477326057583/IMG_8718.jpg?ex=65347cd8&is=652207d8&hm=c748dff8e7a93e149f33c5cbb138ca5a7c1b7587d7e68405963ffdd8495a763f&" }, date: "10/07/2023", status: "Pending"}
       ]
 
       function generateApplicationRows() {
@@ -92,32 +94,29 @@
           let statusClass = '';
           switch (application.status.toLowerCase()) {
             case 'approved':
-              statusClass = 'badge badge-success';
+              statusClass = 'badge rounded-pill badge-success';
               break;
             case 'pending':
-              statusClass = 'badge badge-warning';
+              statusClass = 'badge rounded-pill badge-warning';
               break;
             case 'rejected':
-              statusClass = 'badge badge-danger';
+              statusClass = 'badge rounded-pill badge-danger';
               break;
-          default:
+            default:
               break;
           }
           
           row.innerHTML = `
-            <td>
+            <td class="d-none d-lg-table-cell">
               <div class="profilepic">
-                <img src="https://d3544la1u8djza.cloudfront.net/APHI/Blog/2021/07-06/small+white+fluffy+dog+smiling+at+the+camera+in+close-up-min.jpg" alt="${application.pet.name}" 
-              width="40" height="40" style="border-radius:90%;">
-              &nbsp
-              ${application.pet.name}
+                <img src="https://d3544la1u8djza.cloudfront.net/APHI/Blog/2021/07-06/small+white+fluffy+dog+smiling+at+the+camera+in+close-up-min.jpg" alt="${application.pet.name}" width="40" height="40" style="border-radius:90%;">
               </div>
             </td>
-            <td>${application.date}</td>
+            <td>${application.pet.name}</td>
+            <td class="d-none d-lg-table-cell">${application.date}</td>
             <td><div class="${statusClass}" >${application.status}</div></td>
-
             <td>
-              <button class="btn btn-secondary" onclick="viewApplication()">View Application</button>
+              <button class="btn btn-secondary" onclick="viewApplication()">Details</button>
             </td>
           `;
           tableBody.appendChild(row);
