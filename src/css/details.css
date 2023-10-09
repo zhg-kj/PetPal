@@ -113,3 +113,38 @@ ul.custom-list li:last-child {
     border-radius: 0;
     color: #000;
   }
+
+
+/* review section */
+
+.reviews-section {
+    background-color: #f8f9fa;  /* Change as per your choice */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.review-card {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.review-image img {
+    max-width: 300px;  /* Limit image size */
+    height: auto;
+    margin-right: 15px;
+}
+
+.review-content p {
+    margin: 0;
+}
+
+/* For the stars */
+.fa-star {
+    color: goldenrod;
+}
+
+/* For the empty stars */
+.fa-star:not(.checked) {
+    color: #ddd;
+}
+

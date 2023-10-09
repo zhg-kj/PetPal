@@ -1,98 +1,179 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PetPal</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/details.css">
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">PetPal</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PetPal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/details.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">PetPal</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" id="authDropdown" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Account
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="authDropdown" id="authButtons"></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid pale-yellow">
+    <div class="card border-0 py-5 pale-yellow">
+      <h1 class="ml-5">Shelter Details</h1>
+    </div>
+  </div>
+  <div class="container mt-5">
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <div class="image-gallery">
+          <div class="image-list mr-3">
+            <img
+              onmouseover="changeImage('https://media.philstar.com/photos/2020/11/05/pets-cats-dogs_2020-11-05_19-55-16.jpg')"
+              src="https://media.philstar.com/photos/2020/11/05/pets-cats-dogs_2020-11-05_19-55-16.jpg" alt="Image 1">
+            <img
+              onmouseover="changeImage('https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/08/28/15/rexfeatures_845638j.jpg?quality=75&width=990&crop=3%3A2%2Csmart&auto=webp')"
+              src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/08/28/15/rexfeatures_845638j.jpg?quality=75&width=990&crop=3%3A2%2Csmart&auto=webp"
+              alt="Image 2">
+            <img
+              onmouseover="changeImage('https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/08/28/16/rexfeatures_2299410a%20(1).jpg?quality=75&width=640&auto=webp')"
+              src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/08/28/16/rexfeatures_2299410a%20(1).jpg?quality=75&width=640&auto=webp"
+              alt="Image 3">
+          </div>
+
+          <div class="big-image">
+            <img id="active-image"
+              src="https://media.philstar.com/photos/2020/11/05/pets-cats-dogs_2020-11-05_19-55-16.jpg" alt="Image 1">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card card-custom">
+          <h3 class="text-primary-custom">Shelter Name</h3>
+          <ul class="custom-list">
+            <li><strong>Address:</strong> Address detail</li>
+            <li><strong>Contact:</strong> <br>
+              Phone Number: 123456789 <br>
+              Email: address@gmail.com
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" role="button" id="authDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                Account
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="authDropdown" id="authButtons"></div>
+            <li>
+              <p><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </li>
           </ul>
-        </div>
-      </div>
-    </nav>
-    <div class="container-fluid pale-yellow">
-      <div class="card border-0 py-5 pale-yellow">
-        <h1 class="ml-5">Shelter Details</h1>
-      </div>
-    </div>
-    <div class="container mt-5">
-      <div class="row mt-4">
-        <div class="col-md-6">
-          <div class="image-gallery">
-            <div class="image-list mr-3">
-              <img onmouseover="changeImage('https://media.philstar.com/photos/2020/11/05/pets-cats-dogs_2020-11-05_19-55-16.jpg')" src="https://media.philstar.com/photos/2020/11/05/pets-cats-dogs_2020-11-05_19-55-16.jpg" alt="Image 1">
-              <img onmouseover="changeImage('https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/08/28/15/rexfeatures_845638j.jpg?quality=75&width=990&crop=3%3A2%2Csmart&auto=webp')" src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/08/28/15/rexfeatures_845638j.jpg?quality=75&width=990&crop=3%3A2%2Csmart&auto=webp" alt="Image 2">
-              <img onmouseover="changeImage('https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/08/28/16/rexfeatures_2299410a%20(1).jpg?quality=75&width=640&auto=webp')" src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/08/28/16/rexfeatures_2299410a%20(1).jpg?quality=75&width=640&auto=webp" alt="Image 3">
-            </div>
-
-            <div class="big-image">
-              <img id="active-image" src="https://media.philstar.com/photos/2020/11/05/pets-cats-dogs_2020-11-05_19-55-16.jpg" alt="Image 1">
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card card-custom">
-            <h3 class="text-primary-custom">Pet Name</h3>
-            <ul class="custom-list">
-              <li><strong>Breed:</strong> Pet Breed</li>
-              <li><strong>Age:</strong> Pet Age</li>
-              <li><p><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></li>
-            </ul>
-            <button class="btn btn-primary mt-3 btn-space" onclick="adopt()">Adopt</button>
-            <button class="btn btn-secondary mt-3" onclick="viewShelterDetails()">View Shelter</button>
-          </div>
+          <button class="btn btn-primary mt-3 btn-space" onclick="adopt()">Adopt</button>
+          <button class="btn btn-secondary mt-3" onclick="viewShelterDetails()">View Shelter</button>
         </div>
       </div>
     </div>
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <h2>Reviews</h2>
+        <!-- Review Section -->
+        <div class="reviews-section">
+          <!-- Review -->
+          <div class="review-card">
+            <div class="review-image">
+              <img src="https://indie88.com/wp-content/uploads/2018/06/Foster-Dogs.jpg" alt="Reviewer Image">
+            </div>
+            <div class="review-content">
+              <div class="review-stars">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+              </div>
+              <br>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </div>
+          <!-- Repeat .review-card for more reviews -->
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-    <script src="auth.js"></script>
-    <script>
-      function renderAuthButtons() {
-        const authButtonsDiv = document.getElementById("authButtons");
-        const auth = checkAuth();
-        if (auth != null) {
-          if (auth === 'user') {
-            authButtonsDiv.innerHTML = '<a class="dropdown-item" href="applications.html">Applications</a><a class="dropdown-item" href="user.html">Profile</a><a class="dropdown-item" onclick="handleLogout()">Logout</a>';
-          } else if (auth === 'shelter') {
-            authButtonsDiv.innerHTML = '<a class="dropdown-item" href="manage.html">Manage Pets</a><a class="dropdown-item" href="shelter.html">Profile</a><a class="dropdown-item" onclick="handleLogout()">Logout</a>';
-          }
-        } else {
-          authButtonsDiv.innerHTML = '<a class="dropdown-item" href="login.html">Login</a>';
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+  <script src="auth.js"></script>
+  <script>
+    function renderAuthButtons() {
+      const authButtonsDiv = document.getElementById("authButtons");
+      const auth = checkAuth();
+      if (auth != null) {
+        if (auth === 'user') {
+          authButtonsDiv.innerHTML = '<a class="dropdown-item" href="applications.html">Applications</a><a class="dropdown-item" href="user.html">Profile</a><a class="dropdown-item" onclick="handleLogout()">Logout</a>';
+        } else if (auth === 'shelter') {
+          authButtonsDiv.innerHTML = '<a class="dropdown-item" href="manage.html">Manage Pets</a><a class="dropdown-item" href="shelter.html">Profile</a><a class="dropdown-item" onclick="handleLogout()">Logout</a>';
         }
+      } else {
+        authButtonsDiv.innerHTML = '<a class="dropdown-item" href="login.html">Login</a>';
       }
+    }
 
-      function goToLogin() {
-        window.location.href = "login.html";
-      }
+    function goToLogin() {
+      window.location.href = "login.html";
+    }
 
-      function handleLogout() {
-        logout();
-        window.location.href = "index.html";
-        renderAuthButtons();
-      }
-
+    function handleLogout() {
+      logout();
+      window.location.href = "index.html";
       renderAuthButtons();
-    </script>
-  </body>
+    }
+
+    renderAuthButtons();
+  </script>
+
+
+  <script>
+    function changeImage(src) {
+      document.getElementById('active-image').src = src;
+    }
+
+    document.getElementById('toggleButton').addEventListener('click', function () {
+      var medicalHistory = document.getElementById('medicalHistory');
+      medicalHistory.classList.contains('show') ?
+        medicalHistory.classList.remove('show') :
+        medicalHistory.classList.add('show');
+    });
+
+    document.getElementById('toggleButton1').addEventListener('click', function () {
+      var medicalHistory = document.getElementById('behavior');
+      medicalHistory.classList.contains('show') ?
+        medicalHistory.classList.remove('show') :
+        medicalHistory.classList.add('show');
+    });
+
+    document.getElementById('toggleButton2').addEventListener('click', function () {
+      var medicalHistory = document.getElementById('requirements');
+      medicalHistory.classList.contains('show') ?
+        medicalHistory.classList.remove('show') :
+        medicalHistory.classList.add('show');
+    });
+    
+
+  </script>
+</body>
+
 </html>
