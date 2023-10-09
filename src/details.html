@@ -77,6 +77,14 @@
           <button class="btn btn-secondary mt-3" onclick="viewShelterDetails()">View Shelter</button>
         </div>
       </div>
+      <div class="row mt-4">
+        <div class="col-md-12 d-flex justify-content-center align-items-center status-wrap">
+          <div id="status-display" class="text-center py-3 rounded status-text">
+            Status: <span id="status-value">Click refresh for status</span>
+          </div>
+          <button onclick="refreshStatus()" class="btn btn-primary refresh-btn">Refresh</button>
+        </div>
+      </div>
       <div class="row mt-2">
         <div class="col-md-12">
           <button id="toggleButton" class="btn btn-primary mt-3 btn-block btn-custom">Medical History</button>
@@ -175,6 +183,33 @@
         medicalHistory.classList.remove('show') :
         medicalHistory.classList.add('show');
     });
+
+    function updateStatus(status) {
+      let statusElement = document.getElementById("status-value");
+      let statusDisplayElement = document.getElementById("status-display");
+
+      statusElement.textContent = status;
+
+      switch (status) {
+        case "Pending":
+          statusDisplayElement.className = "text-center py-3 bg-warning rounded mr-5 status-text";
+          break;
+        case "Adopted":
+          statusDisplayElement.className = "text-center py-3 bg-success rounded mr-5 status-text";
+          break;
+        case "Withdrawn":
+          statusDisplayElement.className = "text-center py-3 bg-danger rounded mr-5 status-text";
+          break;
+        default:
+          statusDisplayElement.className = "text-center py-3 bg-light rounded mr-5 status-text";
+      }
+    }
+
+    function refreshStatus() {
+      const statuses = ["Pending", "Adopted", "Withdrawn"];
+      const randomStatus = statuses[Math.floor(Math.random() * statuses.length)];
+      updateStatus(randomStatus);
+    }
 
   </script>
 </body>
