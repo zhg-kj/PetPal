@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PetPal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/details.css">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -28,8 +29,39 @@
         </div>
       </div>
     </nav>
+    <div class="container-fluid pale-yellow">
+      <div class="card border-0 py-5 pale-yellow">
+        <h1 class="ml-5">Shelter Details</h1>
+      </div>
+    </div>
     <div class="container mt-5">
-      <h1>Shelter Details</h1>
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <div class="image-gallery">
+            <div class="image-list mr-3">
+              <img onmouseover="changeImage('https://media.philstar.com/photos/2020/11/05/pets-cats-dogs_2020-11-05_19-55-16.jpg')" src="https://media.philstar.com/photos/2020/11/05/pets-cats-dogs_2020-11-05_19-55-16.jpg" alt="Image 1">
+              <img onmouseover="changeImage('https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/08/28/15/rexfeatures_845638j.jpg?quality=75&width=990&crop=3%3A2%2Csmart&auto=webp')" src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/08/28/15/rexfeatures_845638j.jpg?quality=75&width=990&crop=3%3A2%2Csmart&auto=webp" alt="Image 2">
+              <img onmouseover="changeImage('https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/08/28/16/rexfeatures_2299410a%20(1).jpg?quality=75&width=640&auto=webp')" src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/08/28/16/rexfeatures_2299410a%20(1).jpg?quality=75&width=640&auto=webp" alt="Image 3">
+            </div>
+
+            <div class="big-image">
+              <img id="active-image" src="https://media.philstar.com/photos/2020/11/05/pets-cats-dogs_2020-11-05_19-55-16.jpg" alt="Image 1">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card card-custom">
+            <h3 class="text-primary-custom">Pet Name</h3>
+            <ul class="custom-list">
+              <li><strong>Breed:</strong> Pet Breed</li>
+              <li><strong>Age:</strong> Pet Age</li>
+              <li><p><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></li>
+            </ul>
+            <button class="btn btn-primary mt-3 btn-space" onclick="adopt()">Adopt</button>
+            <button class="btn btn-secondary mt-3" onclick="viewShelterDetails()">View Shelter</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
