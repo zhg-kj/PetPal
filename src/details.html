@@ -25,6 +25,16 @@
       .bg-p {
         background-color: #4359d6;
       }
+
+      #pawImage {
+        position: fixed;
+        top: 100px;
+        left: 20px;
+        z-index: 1;
+        opacity: 0.1;
+        transform: scaleX(-1);
+      }
+    </style>
     </style>
   </head>
   <body class="bg-light">
@@ -168,6 +178,7 @@
         </div>
       </div>
     </div>
+    <img id="pawImage" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Dog_Paw_Print.png/455px-Dog_Paw_Print.png" alt="Paw Image" />
 
     <script>
       function adopt() {
