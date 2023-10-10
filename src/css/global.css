@@ -1,9 +1,4 @@
-
-/* 
- * css file for all page 
- */
-
- .buttonone{
+.buttonone{
     background-color:  #4359d6 !important;
     border-radius: 200px !important;
     border: none !important;
@@ -12,4 +7,9 @@
 .buttonone:hover{
     background-color: #213291 !important;
     border-radius: 200px !important;
+}
+
+.dropdown-item:focus {
+    background-color: #4359d6 !important;
+    color: white;
 }

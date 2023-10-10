@@ -32,7 +32,7 @@
     .rounded-message-user {
       padding: 10px;
       border-radius: 15px;
-      background-color: #007bff; /* Blue color for user's messages */
+      background-color: #4359d6; /* Blue color for user's messages */
       color: white;
       max-width: 70%;
     }
