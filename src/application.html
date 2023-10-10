@@ -14,6 +14,24 @@
       textarea {
         resize: none;
       }
+
+      #pawImage {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        right: 60%;
+        z-index: -1;
+        opacity: 0.1;
+      }
+
+      #pawImagetwo {
+        position: fixed;
+        bottom: 40px;
+        right: 10px;
+        z-index: -1;
+        opacity: 0.1;
+      }
+
     </style>
   </head>
   <body class="bg-light">
@@ -152,7 +170,8 @@
         </div>
       </div>      
     </div>
-
+    <img id="pawImage" src="https://static.vecteezy.com/system/resources/previews/008/513/604/original/dog-paw-prints-track-illustration-png.png">
+    <img id="pawImagetwo" src="https://static.vecteezy.com/system/resources/previews/008/513/604/original/dog-paw-prints-track-illustration-png.png">
     <script>
       function viewChat() {
         window.location.href = "chat.html";
