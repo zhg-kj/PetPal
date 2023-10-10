@@ -18,6 +18,15 @@
         background-color: #d5e0ed;
         border: none;
       }
+
+      #pawImage {
+        position: fixed;
+        bottom: 40px;
+        right: 10px;
+        z-index: -1;
+        opacity: 0.1;
+        transform: rotate(40deg) scale(0.7);
+      }
     </style>
   </head>
   <body class="bg-light">
@@ -150,6 +159,8 @@
         </div>
       </div>
     </div>
+
+    <img id="pawImage" src="https://static.vecteezy.com/system/resources/previews/008/513/604/original/dog-paw-prints-track-illustration-png.png">
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

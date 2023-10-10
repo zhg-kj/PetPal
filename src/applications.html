@@ -23,6 +23,26 @@
       td {
           vertical-align: middle;
       }
+
+      #pawImage {
+        position: fixed;
+        bottom: 40px;
+        right: 10px;
+        z-index: -1;
+        opacity: 0.1;
+        transform: rotate(40deg) scale(0.7);
+      }
+
+      #pawImagetwo {
+        position: fixed;
+        bottom: -100px;
+        right: 300px;
+        z-index: -1;
+        opacity: 0.1;
+        transform: rotate(40deg) scale(0.7);
+      }
+
+
     </style>
   </head>
   <body class="bg-light">
@@ -109,6 +129,10 @@
         </div>
       </div>
     </div>
+
+    <img id="pawImage" src="https://assets.stickpng.com/images/58aeff90c869e092af51ee71.png">
+    <img id="pawImagetwo" src="https://assets.stickpng.com/images/58aeff90c869e092af51ee71.png">
+    
 
     <script>
       function viewApplication() {
