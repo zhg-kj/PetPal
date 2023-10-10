@@ -1,224 +1,270 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PetPal</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="css/details.css">
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PetPal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/details.css">
+    <style>
+      .bg-b {
+        background-color: #eaeff5;
+      }
 
-<body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">PetPal</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" role="button" id="authDropdown" data-bs-toggle="dropdown"
-              aria-expanded="false">
+      .corners {
+        border-radius: 0 50px 0 50px;
+        background-color: #d5e0ed;
+        border: none;
+      }
+
+      .bg-g {
+        background-color: #80ed99;
+      }
+
+      .bg-p {
+        background-color: #4359d6;
+      }
+    </style>
+  </head>
+  <body class="bg-light">
+    <nav class="navbar navbar-expand-lg bg-b fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">PetPal</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
+            </li>
+          </ul>
+          <div class="dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              role="button"
+              id="authDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
               Account
             </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="authDropdown" id="authButtons"></div>
-          </li>
-        </ul>
+            <div
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="authDropdown"
+              id="authButtons"
+            ></div>
+          </div>
+        </div>
       </div>
-    </div>
-  </nav>
-<nav class="navbar navbar-expand-lg">
+    </nav>
+    <nav class="navbar navbar-expand-lg">
       <div class="container">
         <a class="navbar-brand">PetPal</a>
       </div>
     </nav>
-<div class="container-fluid pale-yellow">
-    <div class="card border-0 py-5 pale-yellow">
-      <h1 class="ml-5">Pet Details</h1>
+    <div class="container-fluid bg-b pt-5 pb-5">
+      <div class="container">
+        <div class="row g-0">
+          <div class="col-md-6 d-flex flex-column justify-content-center my-3">
+            <h1>Hi, I'm</h1>
+            <h1>Charlie</h1>
+            <p class="lead mt-4">Once, I roamed the streets alone, a forgotten soul in search of warmth and love. Then, a kind hand reached out, leading me to a place called a "shelter." They called me Charlie.</p>
+            <p>I'm an explorer at heart, loving the feel of grass beneath my paws and the wind in my fur. I adore belly rubs, ear scratches, and playtime with squeaky toys. But what I cherish most is companionship—a loving friend to share my days with.</p>
+            <p>As I wait for a forever family, my eyes brim with hope, longing for that special connection to mend my heart. I may have started as a stray, but now, I'm a dog eager to find my home and fill it with love.</p>
+            <div class="d-flex justify-content-end align-items-center mt-3">
+              <button class="btn btn-outline-primary mx-3 btn-lg" onclick="viewShelterDetails()">View Shelter</button>
+              <button class="btn btn-primary btn-lg" onclick="adopt()">Adopt</button>
+            </div>
+            <div class="card corners mt-4 p-4 d-flex flex-column justify-content-center align-items-center">
+              <div>
+                <h3>Charlie is still waiting for his new home.</h3>
+                <p>Interested in adopting him? Click adopt and fill in an application!</p>
+              </div>
+              <span class="position-absolute top-50 start-100 translate-middle p-2 bg-g border border-light rounded-circle">
+                <span class="visually-hidden">Status</span>
+              </span>
+            </div>
+          </div>
+          <div class="col-md-1">
+            <!-- Spacer -->
+          </div>
+          <div class="col-md-5">
+            <img id="active-image" style="max-width: 100%;"
+              src="https://cdn.discordapp.com/attachments/861479282915803137/1161299225800364053/IMG_8754.jpg?ex=6537cb2f&is=6525562f&hm=31ead8c09165b30f6aa786ae73dc7720fd68d7f6e650fd90ceef35d48ee13584&" alt="Image 1">
+            <div class="image-list">
+              <img
+                onmouseover="changeImage('https://cdn.discordapp.com/attachments/861479282915803137/1161299225800364053/IMG_8754.jpg?ex=6537cb2f&is=6525562f&hm=31ead8c09165b30f6aa786ae73dc7720fd68d7f6e650fd90ceef35d48ee13584&')"
+                src="https://cdn.discordapp.com/attachments/861479282915803137/1161299225800364053/IMG_8754.jpg?ex=6537cb2f&is=6525562f&hm=31ead8c09165b30f6aa786ae73dc7720fd68d7f6e650fd90ceef35d48ee13584&" alt="Image 1">
+              <img
+                onmouseover="changeImage('https://cdn.discordapp.com/attachments/861479282915803137/1161299225569669181/IMG_8755.jpg?ex=6537cb2f&is=6525562f&hm=f646b1a4ac044ef726eb6b1c2a78cf55a29417e2aa42f8393058804def4898c0&')"
+                src="https://cdn.discordapp.com/attachments/861479282915803137/1161299225569669181/IMG_8755.jpg?ex=6537cb2f&is=6525562f&hm=f646b1a4ac044ef726eb6b1c2a78cf55a29417e2aa42f8393058804def4898c0&"
+                alt="Image 2">
+              <img
+                onmouseover="changeImage('https://cdn.discordapp.com/attachments/861479282915803137/1161299226173640814/IMG_8753.jpg?ex=6537cb2f&is=6525562f&hm=cdacbe2051aaa00dd4848fb6716af8126a674b43ec52d9a3384f63d8b601a1b9&')"
+                src="https://cdn.discordapp.com/attachments/861479282915803137/1161299226173640814/IMG_8753.jpg?ex=6537cb2f&is=6525562f&hm=cdacbe2051aaa00dd4848fb6716af8126a674b43ec52d9a3384f63d8b601a1b9&"
+                alt="Image 3">
+            </div>
+          </div>
+        </div> 
+      </div>
     </div>
-  </div>
-  <div class="container mt-5">
-    <div class="row mt-4">
-      <div class="col-md-6">
-        <div class="image-gallery">
-          <div class="image-list mr-3">
-            <img
-              onmouseover="changeImage('https://media.philstar.com/photos/2020/11/05/pets-cats-dogs_2020-11-05_19-55-16.jpg')"
-              src="https://media.philstar.com/photos/2020/11/05/pets-cats-dogs_2020-11-05_19-55-16.jpg" alt="Image 1">
-            <img
-              onmouseover="changeImage('https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/08/28/15/rexfeatures_845638j.jpg?quality=75&width=990&crop=3%3A2%2Csmart&auto=webp')"
-              src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/08/28/15/rexfeatures_845638j.jpg?quality=75&width=990&crop=3%3A2%2Csmart&auto=webp"
-              alt="Image 2">
-            <img
-              onmouseover="changeImage('https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/08/28/16/rexfeatures_2299410a%20(1).jpg?quality=75&width=640&auto=webp')"
-              src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/08/28/16/rexfeatures_2299410a%20(1).jpg?quality=75&width=640&auto=webp"
-              alt="Image 3">
-          </div>
-
-          <div class="big-image">
-            <img id="active-image"
-              src="https://media.philstar.com/photos/2020/11/05/pets-cats-dogs_2020-11-05_19-55-16.jpg" alt="Image 1">
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card card-custom">
-          <h3 class="text-primary-custom">Pet Name</h3>
-          <ul class="custom-list">
-            <li><strong>Breed:</strong> Pet Breed</li>
-            <li><strong>Age:</strong> Pet Age</li>
-            <li>
-              <p><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </li>
-          </ul>
-          <button class="btn btn-primary mt-3 btn-space" onclick="adopt()">Adopt</button>
-          <button class="btn btn-secondary mt-3" onclick="viewShelterDetails()">View Shelter</button>
-        </div>
-      </div>
-    </nav>
-    <div class="container mt-5">
-      <h1>Details</h1>
-      <div class="row mt-4">
-        <div class="col-md-12 d-flex justify-content-center align-items-center status-wrap">
-          <div id="status-display" class="text-center py-3 rounded status-text">
-            Status: <span id="status-value">Click refresh for status</span>
-          </div>
-          <button onclick="refreshStatus()" class="btn btn-primary refresh-btn">Refresh</button>
-        </div>
-      </div>
+    <div class="container mt-5 mb-5">
+      <h2>Details</h2>
       <div class="row mt-2">
         <div class="col-md-12">
           <button id="toggleButton" class="btn btn-primary mt-3 btn-block btn-custom">Medical History</button>
-          <div id="medicalHistory" class="collapse">
-            <div class="card card-body">
-              Medical history details...
+          <div id="medicalHistory" class="collapsen">
+            <div class="card p-3 border-0">
+              <p>Charlie is a handsome and affectionate canine companion who has undergone a thorough medical evaluation during his stay at our shelter. We are pleased to share his medical details with potential adopters:</p>
+              <ul>
+                <li><strong>Breed:</strong> Mixed-breed (Labrador Retriever and Border Collie mix)</li>
+                <li><strong>Age:</strong> 2 to 3 years old</li>
+                <li><strong>Health:</strong> Up-to-date vaccinations, neutered, microchipped</li>
+                <li><strong>Dental Health:</strong> Healthy</li>
+                <li><strong>Weight:</strong> Approximately 60 pounds</li>
+                <li><strong>Medications:</strong> None; No known allergies or medical conditions</li>
+              </ul>
             </div>
           </div>
-
           <button id="toggleButton1" class="btn btn-primary mt-3 btn-block btn-custom">Behavior</button>
-          <div id="behavior" class="collapse">
-            <div class="card card-body">
-              Behavior details...
+          <div id="behavior" class="collapsen">
+            <div class="card p-3 border-0">
+              <p>Charlie is an absolute delight when it comes to his behavior and personality. Here are some key insights into his character:</p>
+              <ul>
+                <li><strong>Temperament:</strong> Friendly, outgoing, and affectionate</li>
+                <li><strong>Socialization:</strong> Gets along well with other dogs</li>
+                <li><strong>Energy Level:</strong> Moderately active</li>
+                <li><strong>Training:</strong> Quick learner; responds well to positive reinforcement</li>
+                <li><strong>Special Notes:</strong> Loving and loyal personality</li>
+              </ul>
             </div>
           </div>
-
           <button id="toggleButton2" class="btn btn-primary mt-3 btn-block btn-custom">Special Needs or
             Requirements</button>
-          <div id="requirements" class="collapse">
-            <div class="card card-body">
-              Requirements details...
+          <div id="requirements" class="collapsen">
+            <div class="card p-3 border-0">
+              <p>To ensure Charlie's well-being and happiness in his forever home, we have a few recommendations for his potential adopters:</p>
+              <ul>
+                <li><strong>Active Lifestyle:</strong> Provide daily exercise and playtime</li>
+                <li><strong>Social Interaction:</strong> A home where he can be part of the family</li>
+                <li><strong>Training:</strong> Continued training and positive reinforcement</li>
+                <li><strong>Secure Fencing:</strong> A secure, fenced yard</li>
+                <li><strong>Love and Affection:</strong> A loving and committed family</li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="mb-5"></div>
-  </div>
 
-  <script>
-    function adopt() {
-      window.location.href = "adopt.html";
-    }
-    function viewShelterDetails() {
-      window.location.href = "shelterDetails.html";
-    }
-  </script>
+    <script>
+      function adopt() {
+        window.location.href = "adopt.html";
+      }
+      function viewShelterDetails() {
+        window.location.href = "shelterDetails.html";
+      }
+    </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-    crossorigin="anonymous"></script>
-  <script src="auth.js"></script>
-  <script>
-    function renderAuthButtons() {
-      const authButtonsDiv = document.getElementById("authButtons");
-      const auth = checkAuth();
-      if (auth != null) {
-        if (auth === 'user') {
-          authButtonsDiv.innerHTML = '<a class="dropdown-item" href="applications.html">Applications</a><a class="dropdown-item" href="user.html">Profile</a><a class="dropdown-item" onclick="handleLogout()">Logout</a>';
-        } else if (auth === 'shelter') {
-          authButtonsDiv.innerHTML = '<a class="dropdown-item" href="manage.html">Manage Pets</a><a class="dropdown-item" href="shelter.html">Profile</a><a class="dropdown-item" onclick="handleLogout()">Logout</a>';
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"></script>
+    <script src="auth.js"></script>
+    <script>
+      function renderAuthButtons() {
+        const authButtonsDiv = document.getElementById("authButtons");
+        const auth = checkAuth();
+        if (auth != null) {
+          if (auth === 'user') {
+            authButtonsDiv.innerHTML = '<a class="dropdown-item" href="applications.html">Applications</a><a class="dropdown-item" href="user.html">Profile</a><a class="dropdown-item" onclick="handleLogout()">Logout</a>';
+          } else if (auth === 'shelter') {
+            authButtonsDiv.innerHTML = '<a class="dropdown-item" href="manage.html">Manage Pets</a><a class="dropdown-item" href="shelter.html">Profile</a><a class="dropdown-item" onclick="handleLogout()">Logout</a>';
+          }
+        } else {
+          authButtonsDiv.innerHTML = '<a class="dropdown-item" href="login.html">Login</a>';
         }
-      } else {
-        authButtonsDiv.innerHTML = '<a class="dropdown-item" href="login.html">Login</a>';
       }
-    }
 
-    function goToLogin() {
-      window.location.href = "login.html";
-    }
+      function goToLogin() {
+        window.location.href = "login.html";
+      }
 
-    function handleLogout() {
-      logout();
-      window.location.href = "index.html";
+      function handleLogout() {
+        logout();
+        window.location.href = "index.html";
+        renderAuthButtons();
+      }
+
       renderAuthButtons();
-    }
+    </script>
 
-    renderAuthButtons();
-  </script>
-
-  <script>
-    function changeImage(src) {
-      document.getElementById('active-image').src = src;
-    }
-
-    document.getElementById('toggleButton').addEventListener('click', function () {
-      var medicalHistory = document.getElementById('medicalHistory');
-      medicalHistory.classList.contains('show') ?
-        medicalHistory.classList.remove('show') :
-        medicalHistory.classList.add('show');
-    });
-
-    document.getElementById('toggleButton1').addEventListener('click', function () {
-      var medicalHistory = document.getElementById('behavior');
-      medicalHistory.classList.contains('show') ?
-        medicalHistory.classList.remove('show') :
-        medicalHistory.classList.add('show');
-    });
-
-    document.getElementById('toggleButton2').addEventListener('click', function () {
-      var medicalHistory = document.getElementById('requirements');
-      medicalHistory.classList.contains('show') ?
-        medicalHistory.classList.remove('show') :
-        medicalHistory.classList.add('show');
-    });
-
-    function updateStatus(status) {
-      let statusElement = document.getElementById("status-value");
-      let statusDisplayElement = document.getElementById("status-display");
-
-      statusElement.textContent = status;
-
-      switch (status) {
-        case "Pending":
-          statusDisplayElement.className = "text-center py-3 bg-warning rounded mr-5 status-text";
-          break;
-        case "Adopted":
-          statusDisplayElement.className = "text-center py-3 bg-success rounded mr-5 status-text";
-          break;
-        case "Withdrawn":
-          statusDisplayElement.className = "text-center py-3 bg-danger rounded mr-5 status-text";
-          break;
-        default:
-          statusDisplayElement.className = "text-center py-3 bg-light rounded mr-5 status-text";
+    <script>
+      function changeImage(src) {
+        document.getElementById('active-image').src = src;
       }
-    }
 
-    function refreshStatus() {
-      const statuses = ["Pending", "Adopted", "Withdrawn"];
-      const randomStatus = statuses[Math.floor(Math.random() * statuses.length)];
-      updateStatus(randomStatus);
-    }
+      document.getElementById('toggleButton').addEventListener('click', function () {
+        var medicalHistory = document.getElementById('medicalHistory');
+        medicalHistory.classList.contains('show') ?
+          medicalHistory.classList.remove('show') :
+          medicalHistory.classList.add('show');
+      });
 
-  </script>
-</body>
+      document.getElementById('toggleButton1').addEventListener('click', function () {
+        var medicalHistory = document.getElementById('behavior');
+        medicalHistory.classList.contains('show') ?
+          medicalHistory.classList.remove('show') :
+          medicalHistory.classList.add('show');
+      });
 
+      document.getElementById('toggleButton2').addEventListener('click', function () {
+        var medicalHistory = document.getElementById('requirements');
+        medicalHistory.classList.contains('show') ?
+          medicalHistory.classList.remove('show') :
+          medicalHistory.classList.add('show');
+      });
+
+      function updateStatus(status) {
+        let statusElement = document.getElementById("status-value");
+        let statusDisplayElement = document.getElementById("status-display");
+
+        statusElement.textContent = status;
+
+        switch (status) {
+          case "Pending":
+            statusDisplayElement.className = "text-center py-3 bg-warning rounded mr-5 status-text";
+            break;
+          case "Adopted":
+            statusDisplayElement.className = "text-center py-3 bg-success rounded mr-5 status-text";
+            break;
+          case "Withdrawn":
+            statusDisplayElement.className = "text-center py-3 bg-danger rounded mr-5 status-text";
+            break;
+          default:
+            statusDisplayElement.className = "text-center py-3 bg-light rounded mr-5 status-text";
+        }
+      }
+
+      function refreshStatus() {
+        const statuses = ["Pending", "Adopted", "Withdrawn"];
+        const randomStatus = statuses[Math.floor(Math.random() * statuses.length)];
+        updateStatus(randomStatus);
+      }
+    </script>
+  </body>
 </html>
