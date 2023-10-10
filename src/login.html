@@ -28,11 +28,12 @@
           </div>
 
           <div class="container-login-form-btn">
-            <button type="submit" class="login-form-btn rounded-pill" onclick="handleLogin()">Login</button>
+            <button type="submit" class="login-form-btn rounded-pill" id="loginButton" onclick="handleLogin()">Login</button>
           </div>
 
           <p class="text-no-account mt-3">Don't have an account? <a href="signup.html">Sign up here</a></p>
 
+          <div id="error-message-login" class="text-danger mt-3"></div>
         </form>
         <div class="login-more" style="background-image: url('https://cdn.discordapp.com/attachments/861479282915803137/1161342975796858950/IMG_8760.jpg?ex=6537f3ee&is=65257eee&hm=a0b055d062aec04ca075e29a167b42c52537f307cfc10712dc6a2d86d39ae6b8&');"></div>
       </div>
@@ -56,6 +57,36 @@
       }
     }
   </script>
+
+<script>
+  const textareas = document.querySelectorAll('input');
+  const errorMessage = document.getElementById('error-message-login');
+  const signupButton = document.getElementById('loginButton');
+
+  // Add a click event listener to the login button
+  signupButton.addEventListener('click', function () {
+    // Check if any of the textareas are empty
+    let isFormValid = true;
+    textareas.forEach((textarea) => {
+      if (textarea.value.trim() === '') {
+        isFormValid = false;
+      }
+    });
+
+    // Display an error message if the form is not valid
+    if (!isFormValid) {
+      event.preventDefault()
+      errorMessage.textContent = 'Please fill in all fields before submitting.';
+    } else {
+      // Clear any previous error message and submit the form
+      errorMessage.textContent = '';
+      // You can add code here to submit the form to the server
+      // For example, you can use AJAX or fetch to send the form data to the server
+      // Replace the following line with your actual form submission code
+      alert('Loged in successfully!');
+    }
+  });
+</script>
 </body>
 
 </html>
