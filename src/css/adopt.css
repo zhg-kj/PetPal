@@ -74,20 +74,14 @@ svg {
     border: black;
 }
 
-.btn-primary {
-    color: #ADA7FF;
-    font-family: Titan One;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-transform: capitalize;
-    background-color: white;
-    border: white;
+
+
+.buttonone{
+    background-color:  #4359d6 !important;
+    border-radius: 200px !important;
 }
 
-.btn-primary:hover{
-    color: black;
-    background-color: white;
-    border: white;
+.buttonone:hover{
+    background-color:#2d4daa !important;
+    border-radius: 200px !important;
 }
