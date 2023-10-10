@@ -6,6 +6,7 @@
  .buttonone{
     background-color:  #4359d6 !important;
     border-radius: 200px !important;
+    border: none !important;
 }
 
 .buttonone:hover{
