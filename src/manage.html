@@ -112,7 +112,7 @@
                 <th class="d-none d-lg-table-cell">Age</th>
                 <th class="d-none d-lg-table-cell">Size</th>
                 <th>Status</th>
-                <th></th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody id="petsTableBody">
@@ -179,9 +179,7 @@
             <td><div class="${statusClass}">${pet.status}</div></td>
             <td>
               <button class="btn btn-secondary buttonone" onclick="updatePet()">Update</button>
-            </td>
-            <td>
-              <button class="btn btn-secondary buttontwo" onclick="updatePet()">Delete</button>
+              <button class="btn btn-secondary buttontwo mx-2" onclick="updatePet()">Delete</button>
             </td>
           `;
           tableBody.appendChild(row);
