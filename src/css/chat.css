@@ -1,0 +1,50 @@
+
+
+
+    /* Custom CSS for speech bubble messages */
+    .message {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .message-user {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-bottom: 20px;
+    }
+
+    .message-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+
+    .rounded-message {
+      padding: 10px;
+      border-radius: 15px;
+      background-color: #f0f0f0;
+      max-width: 70%;
+    }
+
+    .rounded-message-user {
+      padding: 10px;
+      border-radius: 15px;
+      background-color: #007bff; /* Blue color for user's messages */
+      color: white;
+      max-width: 70%;
+    }
+
+    .message-body {
+      margin-left: 10px;
+    }
+
+    .message-body-user {
+      margin-right: 10px;
+    }
+
+
+
+
