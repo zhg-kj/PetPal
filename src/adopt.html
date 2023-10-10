@@ -16,7 +16,6 @@
         resize: none;
       }
 
-   
       #pawImage {
         position: fixed;
         bottom: 10px;
@@ -24,7 +23,14 @@
         z-index: -1;
         opacity: 0.1;
       }
-      
+
+      .border-color-blue {
+        border-color: #4359d6 !important;
+      }
+
+      .border-color-blue-light {
+        border-color: #7989E2 !important;
+      }
     </style>
     </style>
   </head>
@@ -51,7 +57,7 @@
               >
             </li>
           </ul>
-          <div class="dropdown mx-4">
+          <div class="dropdown mx-4 d-none d-lg-block">
             <button class="btn btn-link nav-link" type="button" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
                 <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
@@ -91,7 +97,7 @@
       </div>
     </nav>
 
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
       <h1>Adopt a Pet</h1>
       <p>Apply to bring home a new friend.</p>
 
@@ -102,6 +108,11 @@
               <div class="row g-0">
                 <div class="col-md-8 d-flex align-items-center justify-content-center">
                   <form class="m-5 w-100">
+                    <div class="row w-25 g-0 mb-5">
+                      <div class="col-md-4 border-bottom border-5 border-color-blue"></div>
+                      <div class="col-md-4 border-bottom border-3 border-color-blue-light"></div>
+                      <div class="col-md-4 border-bottom border-3 border-color-blue-light"></div>
+                    </div>
                     <div>
                       <label for="message" class="form-label">Question 1/3</label>
                       <h3>Do you currently have any other pets? If so, please provide details (species, breed, age).</h3>
@@ -112,7 +123,7 @@
                     </button>
                   </form>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 d-none d-xl-block">
                   <img src="https://cdn.discordapp.com/attachments/861479282915803137/1160390475488960662/IMG_8724.jpg?ex=65347cd8&is=652207d8&hm=c1e21b24fcf89c258d919a21f8c5829196bea02c643ff44e4b9d12c4c2e1cf62&" class="d-block w-100" alt="...">
                 </div>
               </div>
@@ -121,6 +132,11 @@
               <div class="row g-0">
                 <div class="col-md-8 d-flex align-items-center justify-content-center">
                   <form class="m-5 w-100">
+                    <div class="row w-25 g-0 mb-5">
+                      <div class="col-md-4 border-bottom border-3 border-color-blue-light"></div>
+                      <div class="col-md-4 border-bottom border-5 border-color-blue"></div>
+                      <div class="col-md-4 border-bottom border-3 border-color-blue-light"></div>
+                    </div>
                     <div>
                       <label for="message" class="form-label">Question 2/3</label>
                       <h3>What have you done to prepare for a new pet? (Research? Bought equipment?) Please specify.</h3>
@@ -134,7 +150,7 @@
                     </button>
                   </form>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 d-flex d-none d-xl-block">
                   <img src="https://cdn.discordapp.com/attachments/861479282915803137/1160390475488960662/IMG_8724.jpg?ex=65347cd8&is=652207d8&hm=c1e21b24fcf89c258d919a21f8c5829196bea02c643ff44e4b9d12c4c2e1cf62&" class="d-block w-100" alt="...">
                 </div>
               </div>
@@ -143,6 +159,11 @@
               <div class="row g-0">
                 <div class="col-md-8 d-flex align-items-center justify-content-center">
                   <form class="m-5 w-100">
+                    <div class="row w-25 g-0 mb-5">
+                      <div class="col-md-4 border-bottom border-3 border-color-blue-light"></div>
+                      <div class="col-md-4 border-bottom border-3 border-color-blue-light"></div>
+                      <div class="col-md-4 border-bottom border-5 border-color-blue"></div>
+                    </div>
                     <div>
                       <label for="message" class="form-label">Question 3/3</label>
                       <h3>Have you ever surrendered a pet to a shelter or rescue organization? If yes, please explain why.</h3>
@@ -151,12 +172,13 @@
                     <button class="btn btn-secondary mt-3 buttonone btn-lg" type="button" data-bs-target="#adoptForm" data-bs-slide="prev">
                       Previous
                     </button>
-                    <button class="btn btn-secondary mt-3 buttonone btn-lg mx-2" type="button">
+                    <button class="btn btn-secondary mt-3 buttonone btn-lg mx-2" type="button" id="submitButton">
                       Submit
                     </button>
+                    <div id="error-message" class="text-danger mt-3"></div>
                   </form>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 d-flex d-none d-xl-block">
                   <img src="https://cdn.discordapp.com/attachments/861479282915803137/1160390475488960662/IMG_8724.jpg?ex=65347cd8&is=652207d8&hm=c1e21b24fcf89c258d919a21f8c5829196bea02c643ff44e4b9d12c4c2e1cf62&" class="d-block w-100" alt="...">
                 </div>
               </div>
@@ -168,6 +190,34 @@
 
     <img id="pawImage" src="https://static.vecteezy.com/system/resources/previews/008/513/604/original/dog-paw-prints-track-illustration-png.png">
 
+    <script>
+      const textareas = document.querySelectorAll('textarea');
+      const errorMessage = document.getElementById('error-message');
+      const submitButton = document.getElementById('submitButton');
+
+      // Add a click event listener to the submit button
+      submitButton.addEventListener('click', function () {
+        // Check if any of the textareas are empty
+        let isFormValid = true;
+        textareas.forEach((textarea) => {
+          if (textarea.value.trim() === '') {
+            isFormValid = false;
+          }
+        });
+
+        // Display an error message if the form is not valid
+        if (!isFormValid) {
+          errorMessage.textContent = 'Please fill in all fields before submitting.';
+        } else {
+          // Clear any previous error message and submit the form
+          errorMessage.textContent = '';
+          // You can add code here to submit the form to the server
+          // For example, you can use AJAX or fetch to send the form data to the server
+          // Replace the following line with your actual form submission code
+          alert('Form submitted successfully!');
+        }
+      });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <script src="auth.js"></script>

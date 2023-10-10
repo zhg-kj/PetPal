@@ -8,6 +8,7 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/details.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/global.css">
     <style>
       .bg-b {
         background-color: #eaeff5;
@@ -23,7 +24,7 @@
         position: fixed;
         bottom: 40px;
         right: 10px;
-        z-index: -1;
+        z-index: 0;
         opacity: 0.1;
         transform: rotate(40deg) scale(0.7);
       }
@@ -52,7 +53,7 @@
               >
             </li>
           </ul>
-          <div class="dropdown mx-4">
+          <div class="dropdown mx-4 d-none d-lg-block">
             <button class="btn btn-link nav-link" type="button" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
                 <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
@@ -96,15 +97,15 @@
         <h1 class="ml-5">Shelter Details</h1>
         <p>Charlie's current home.</p>
         <div class="row mt-3">
-          <div class="col-md-6">
+          <div class="col-md-6 d-flex flex-column justify-content-center my-3">
             <img style="max-width: 100%;" src="https://cdn.discordapp.com/attachments/861479282915803137/1161312110668697671/IMG_8758.jpg?ex=6537d72f&is=6525622f&hm=c0af13dd925c558fff9b24f2a7b351935fd67a53a591f56538aa1ac376c3798c&">
           </div>
           <div class="col-md-6 d-flex flex-column justify-content-center my-3">
             <h1>We are</h1>
             <h1>Silver Star Animal Shelter</h1>
             <p class="lead mt-4">Welcome to our animal shelter, where we are dedicated to making a positive difference in the lives of animals in need.</p>
-            <p>At our shelter, we provide a safe and loving environment for homeless and abandoned animals. We believe in the power of compassion, and we work tirelessly to rescue, rehabilitate, and rehome animals, giving them a second chance at a happy and fulfilling life. </p>
-            <p>Our team of dedicated staff and volunteers is committed to providing the best care possible for our furry residents. With your support, we continue to be a beacon of hope for animals, offering them a brighter future filled with love and care. Join us in our mission to make a lasting impact on the lives of these wonderful creatures. Together, we can make a difference!</p>
+            <p class="d-none d-lg-block">At our shelter, we provide a safe and loving environment for homeless and abandoned animals. We believe in the power of compassion, and we work tirelessly to rescue, rehabilitate, and rehome animals, giving them a second chance at a happy and fulfilling life. </p>
+            <p class="d-none d-lg-block">Our team of dedicated staff and volunteers is committed to providing the best care possible for our furry residents. With your support, we continue to be a beacon of hope for animals, offering them a brighter future filled with love and care. Join us in our mission to make a lasting impact on the lives of these wonderful creatures. Together, we can make a difference!</p>
             <div class="card corners mt-4 p-4 d-flex flex-column justify-content-center align-items-center">
               <div>
                 <h3>We have 12 animals that need a new home.</h3>
