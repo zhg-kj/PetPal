@@ -57,7 +57,7 @@
     <div class="container mt-5">
       <h1>Pets</h1>
       <p>Manage shelter's animals.</p>
-      <button class="btn btn-secondary" onclick="createPet()">Create Pet</button>
+      <button class="btn btn-secondary buttonone" onclick="createPet()">Create Pet</button>
       <div class="card p-4 mt-3 rounded-4">
         <div class="table-responsive">
           <table class="table table-rounded">
@@ -133,7 +133,7 @@
             <td class="d-none d-lg-table-cell">${pet.size}</td>
             <td><div class="${statusClass}">${pet.status}</div></td>
             <td>
-              <button class="btn btn-secondary" onclick="updatePet()">Update</button>
+              <button class="btn btn-secondary buttonone" onclick="updatePet()">Update</button>
             </td>
           `;
           tableBody.appendChild(row);

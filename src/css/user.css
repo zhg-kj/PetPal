@@ -1,0 +1,14 @@
+
+/* 
+ * css file for user page 
+ */
+
+ .buttonone{
+    background-color:  #4359d6 !important;
+    border-radius: 200px !important;
+}
+
+.buttonone:hover{
+    background-color:#2d4daa !important;
+    border-radius: 200px !important;
+}

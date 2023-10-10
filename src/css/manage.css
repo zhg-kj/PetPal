@@ -1,4 +1,7 @@
 
+/* 
+ * css file for manage page 
+ */
 
 .badge-warning{
     background-color: orange;
@@ -12,6 +15,16 @@
 
 .badge-danger{
     background-color: red;
+}
+
+.buttonone{
+    background-color:  #4359d6 !important;
+    border-radius: 200px !important;
+}
+
+.buttonone:hover{
+    background-color:#2d4daa !important;
+    border-radius: 200px !important;
 }
 
 td{
