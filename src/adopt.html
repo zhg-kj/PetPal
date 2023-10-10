@@ -51,6 +51,21 @@
               >
             </li>
           </ul>
+          <div class="dropdown mx-4">
+            <button class="btn btn-link nav-link" type="button" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+                <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+              </svg>
+              <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+                <span class="visually-hidden">Status</span>
+              </span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown" id="notificationMenu">
+              <div class="dropdown-item border-bottom">Your request to adopt Fluffy has been rejected.</div>
+              <div class="dropdown-item border-bottom">Your application to adopt Blake has been received.</div>
+              <div class="dropdown-item">Your application to adopt Simba has been received.</div>
+            </div>
+          </div>
           <div class="dropdown">
             <a
               class="nav-link dropdown-toggle"
@@ -92,7 +107,7 @@
                       <h3>Do you currently have any other pets? If so, please provide details (species, breed, age).</h3>
                       <textarea class="form-control mt-3 rounded-4" id="message" name="message" rows="6"></textarea>
                     </div>
-                    <button class="btn btn-secondary mt-3 buttonone" type="button" data-bs-target="#adoptForm" data-bs-slide="next">
+                    <button class="btn btn-secondary mt-3 buttonone btn-lg" type="button" data-bs-target="#adoptForm" data-bs-slide="next">
                       Next
                     </button>
                   </form>
@@ -111,10 +126,10 @@
                       <h3>What have you done to prepare for a new pet? (Research? Bought equipment?) Please specify.</h3>
                       <textarea class="form-control mt-3 rounded-4" id="message" name="message" rows="6"></textarea>
                     </div>
-                    <button class="btn btn-secondary mt-3 buttonone" type="button" data-bs-target="#adoptForm" data-bs-slide="prev">
+                    <button class="btn btn-secondary mt-3 buttonone btn-lg" type="button" data-bs-target="#adoptForm" data-bs-slide="prev">
                       Previous
                     </button>
-                    <button class="btn btn-secondary mt-3 buttonone" type="button" data-bs-target="#adoptForm" data-bs-slide="next">
+                    <button class="btn btn-secondary mt-3 buttonone btn-lg mx-2" type="button" data-bs-target="#adoptForm" data-bs-slide="next">
                       Next
                     </button>
                   </form>
@@ -133,10 +148,10 @@
                       <h3>Have you ever surrendered a pet to a shelter or rescue organization? If yes, please explain why.</h3>
                       <textarea class="form-control mt-3 rounded-4" id="message" name="message" rows="6"></textarea>
                     </div>
-                    <button class="btn btn-secondary mt-3 buttonone" type="button" data-bs-target="#adoptForm" data-bs-slide="prev">
+                    <button class="btn btn-secondary mt-3 buttonone btn-lg" type="button" data-bs-target="#adoptForm" data-bs-slide="prev">
                       Previous
                     </button>
-                    <button class="btn btn-secondary mt-3 buttonone" type="button">
+                    <button class="btn btn-secondary mt-3 buttonone btn-lg mx-2" type="button">
                       Submit
                     </button>
                   </form>

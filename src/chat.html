@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PetPal</title>
     <link rel="stylesheet" type="text/css" href="css/chat.css">
+    <link rel="stylesheet" type="text/css" href="css/global.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   </head>
   <body class="bg-light">
@@ -30,6 +31,21 @@
               >
             </li>
           </ul>
+          <div class="dropdown mx-4">
+            <button class="btn btn-link nav-link" type="button" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+                <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+              </svg>
+              <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+                <span class="visually-hidden">Status</span>
+              </span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown" id="notificationMenu">
+              <div class="dropdown-item border-bottom">Your request to adopt Fluffy has been rejected.</div>
+              <div class="dropdown-item border-bottom">Your application to adopt Blake has been received.</div>
+              <div class="dropdown-item">Your application to adopt Simba has been received.</div>
+            </div>
+          </div>
           <div class="dropdown">
             <a
               class="nav-link dropdown-toggle"
@@ -54,16 +70,12 @@
         <a class="navbar-brand">PetPal</a>
       </div>
     </nav>
-
     <div class="container mt-5">
       <h1>Chat</h1>
-    </div>
-
-    <div class="container mt-5">
-      <h4>Chat Thread</h4>
+      <p>Your conversation with Silver Star Animal Shelter.</p>
       <div class="card">
         <div class="card-header">
-          <h5>Subject: Adoption Discussion</h5>
+          <h5>Subject: Adopting Charlie</h5>
         </div>
         <div class="card-body">
 
@@ -82,7 +94,6 @@
             </div>
           </div>
   
-          
           <div class="message-user">
             <div class="message-header">
                Kai Zhuang &nbsp 
@@ -96,9 +107,9 @@
         </div>
         <div class="card-footer">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Type your message...">
-            <div class="input-group-append">
-              <button class="btn btn-primary" type="button">Send</button>
+            <input type="text" class="form-control rounded-pill" placeholder="Type your message...">
+            <div class="input-group-append mx-2">
+              <button class="btn btn-primary rounded-pill buttonone" type="button">Send</button>
             </div>
           </div>
         </div>

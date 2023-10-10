@@ -43,6 +43,10 @@
     color: #000;
 }
 
+.btn-custom:hover {
+    background-color: #4359d6;
+}
+
 .review-image img {
     max-width: 300px;
     /* Limit image size */
