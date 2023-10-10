@@ -10,6 +10,17 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <style>
+      #pawImage {
+        height: 80vh;
+        position: fixed;
+        bottom: 50px;
+        right: 30vw;
+        z-index: -1;
+        opacity: 0.1;
+        transform: scaleX(-1);
+      }
+    </style>
   </head>
   <body class="bg-light">
     <nav class="navbar navbar-expand-lg bg-white fixed-top">
@@ -176,6 +187,7 @@ We love pets!</textarea
         <div class="col-md-6"></div>
       </div>
     </div>
+    <img id="pawImage" src="https://static.vecteezy.com/system/resources/previews/008/513/604/original/dog-paw-prints-track-illustration-png.png">
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
