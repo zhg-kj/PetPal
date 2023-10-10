@@ -1,6 +1,6 @@
 
 /* 
- * css file for application page 
+ * css file for all page 
  */
 
  .buttonone{
@@ -9,6 +9,6 @@
 }
 
 .buttonone:hover{
-    background-color:#2d4daa !important;
+    background-color: #213291 !important;
     border-radius: 200px !important;
 }
