@@ -72,3 +72,7 @@ h5 {
 .navbar-brand {
     font-weight: 700 !important;
 }
+
+a {
+    font-family: 'Inter', sans-serif !important;
+}
