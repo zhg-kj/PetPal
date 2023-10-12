@@ -6,6 +6,24 @@
     <title>PetPal</title>
     <link rel="stylesheet" type="text/css" href="css/global.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+      .inner {
+        height: 300px;
+        border: 2px dotted #4359d6;
+      }
+
+      img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+      }
+
+      .img-section {
+        border: 2px dotted #4359d6;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
   </head>
   <body class="bg-light">
     <nav class="navbar navbar-expand-lg bg-white fixed-top">
@@ -72,8 +90,123 @@
         <a class="navbar-brand">PetPal</a>
       </div>
     </nav>
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
       <h1>Update</h1>
+      <p>Update your pet posting.</p>
+      <div class="row">
+        <div class="col-md-6">
+          <form>
+            <h5 class="mb-2">Pet Specifications</h5>
+            <div class="form-group mb-2">
+              <label class="mb-1" for="name">Name:</label>
+              <input
+                type="text"
+                class="form-control rounded-pill"
+                id="name"
+                name="name"
+                value="Charlie"
+              />
+            </div>
+            <div class="form-group mb-2">
+              <label class="mb-1" for="breed">Breed:</label>
+              <select class="form-select rounded-pill" id="breed" name="breed">
+                <option disabled>Please select a breed</option>
+                <option value="option1">Dog - Corgi</option>
+                <option value="option2" selected>Dog - Pitbull</option>
+                <option value="option3">Cat - Shorthair</option>
+              </select>
+            </div>
+            <div class="row mb-4">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="mb-1" for="sex">Sex:</label>
+                  <select class="form-select rounded-pill" id="sex" name="sex">
+                    <option disabled></option>
+                    <option value="male" selected>Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="mb-1" for="age">Age:</label>
+                  <select class="form-select rounded-pill" id="age" name="age">
+                    <option disabled></option>
+                    <option value="puppy" selected>0-1</option>
+                    <option value="adult">1-2</option>
+                    <option value="senior">2-3</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="mb-1" for="size">Size:</label>
+                  <select class="form-select rounded-pill" id="size" name="size">
+                    <option disabled></option>
+                    <option value="small" selected>Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <h5 class="mb-2">General Information</h5>
+            <div class="form-group mb-2">
+              <label class="mb-1" for="description">Story:</label>
+              <textarea
+                class="form-control rounded-4"
+                id="description"
+                name="description"
+                rows="6"
+                value=""
+              >The dog has no known medical conditions. It is up-to-date on vaccinations and has been spayed/neutered. A complete health check has been performed.</textarea>
+            </div>
+            <div class="form-group mb-2">
+              <label class="mb-1" for="description">Behaviors:</label>
+              <textarea
+                class="form-control rounded-4"
+                id="description"
+                name="description"
+                rows="6"
+                value=""
+              >This sweet dog was found abandoned on the streets and rescued by a kind-hearted Samaritan. Despite a rough start, the dog is full of love and ready for a forever home.</textarea>
+            </div>
+            <div class="form-group mb-2">
+              <label class="mb-1" for="description">Medical Conditions:</label>
+              <textarea
+                class="form-control rounded-4"
+                id="description"
+                name="description"
+                rows="6"
+                value=""
+              >The dog is friendly, good with children, and loves to play fetch. It is house-trained and well-behaved indoors. A bit shy at first but warms up quickly to people.</textarea>
+            </div>
+          </form>
+          <button class="btn btn-secondary mt-3 buttonone btn-lg mb-3" onclick="">Save</button>
+        </div>
+        <div class="col-md-6">
+          <div class="card rounded-4 p-3">
+            <div class="card rounded-3 d-flex justify-content-center align-items-center inner">
+              <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#4359d6" class="bi bi-cloud-upload" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4.406 1.342A5.53 5.53 0 0 1 8 0c2.69 0 4.923 2 5.166 4.579C14.758 4.804 16 6.137 16 7.773 16 9.569 14.502 11 12.687 11H10a.5.5 0 0 1 0-1h2.688C13.979 10 15 8.988 15 7.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 2.825 10.328 1 8 1a4.53 4.53 0 0 0-2.941 1.1c-.757.652-1.153 1.438-1.153 2.055v.448l-.445.049C2.064 4.805 1 5.952 1 7.318 1 8.785 2.23 10 3.781 10H6a.5.5 0 0 1 0 1H3.781C1.708 11 0 9.366 0 7.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383z"/>
+                <path fill-rule="evenodd" d="M7.646 4.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V14.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3z"/>
+              </svg>
+              <p>Drag and drop your images here</p>
+            </div>
+            <button class="btn btn-secondary mt-3 buttonone btn-lg mb-3" onclick="">Add Images</button>
+            <div class="d-flex">
+              <img src="https://cdn.discordapp.com/attachments/861479282915803137/1161299225800364053/IMG_8754.jpg?ex=6537cb2f&is=6525562f&hm=31ead8c09165b30f6aa786ae73dc7720fd68d7f6e650fd90ceef35d48ee13584&">
+              <img class="mx-2" src="https://cdn.discordapp.com/attachments/861479282915803137/1161299225800364053/IMG_8754.jpg?ex=6537cb2f&is=6525562f&hm=31ead8c09165b30f6aa786ae73dc7720fd68d7f6e650fd90ceef35d48ee13584&">
+              <img src="https://cdn.discordapp.com/attachments/861479282915803137/1161299225800364053/IMG_8754.jpg?ex=6537cb2f&is=6525562f&hm=31ead8c09165b30f6aa786ae73dc7720fd68d7f6e650fd90ceef35d48ee13584&">
+              <div class="img-section rounded-2 mx-2 d-flex justify-content-center align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#4359d6" class="bi bi-plus" viewBox="0 0 16 16">
+                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
